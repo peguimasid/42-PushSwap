@@ -1,0 +1,11 @@
+*/**/.a
+*/**/.o
+*/**/.out
+
+.vscode
+push_swap
+*.a
+*.o
+*.out
+
+.DS_Store
