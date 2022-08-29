@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/08/26 17:14:56 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/08/29 15:10:21 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,60 @@ int	throw_error(char *error)
 	return (1);
 }
 
-void	print_nums(char **args)
+t_stack	*create_stack(unsigned int size)
 {
-	int	i;
+	t_stack	*stack;
 
-	i = 0;
-	while (args[i])
-	{
-		ft_printf("%s\n", args[i]);
-		i++;
-	}
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	stack->size = size;
+	stack->index = -1;
+	stack->array = (int *)malloc(size * sizeof(int));
+	return (stack);
 }
 
+int	is_empty(t_stack *stack)
+{
+	return (stack->index == -1);
+}
+
+// Function to add an item to stack.  It increases top by 1
+void	push(t_stack *stack, int item)
+{
+	stack->array[++stack->index] = item;
+	ft_printf("%d pushed to stack\n", item);
+}
+
+// Function to remove an item from stack.  It decreases top by 1
+int	pop(t_stack *stack)
+{
+	return (stack->array[stack->index--]);
+}
+
+// Function to return the top from stack without removing it
+int	peek(t_stack *stack)
+{
+	return (stack->array[stack->index]);
+}
+
+// Driver program to test above functions
 int	main(int argc, char **argv)
 {
+	t_stack	*stack;
+	int		i;
+
 	if (argc < 2)
 		return (throw_error("Plase provide at least one number"));
-	print_nums(argv + 1);
+	// TODO: Validate if all argv[] are numbers
+	stack = create_stack(argc - 1);
+	i = 1;
+	while (argv[i])
+	{
+		push(stack, ft_atoi(argv[i]));
+		i++;
+	}
+	ft_printf("\n");
+	ft_printf("%d popped from stack\n", pop(stack));
+	ft_printf("%d popped from stack\n", pop(stack));
+	ft_printf("%d popped from stack\n", pop(stack));
+	return (0);
 }
