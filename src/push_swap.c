@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/08/29 18:47:08 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/08/29 18:52:39 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (throw_error("Plase provide at least one number"));
 	// TODO: Validate if all argv[] are numbers
+	// TODO: Improve create stack code architecture
+	// TODO: Create stack operations (SA, SB, SS...)
 	stack = create_stack(argc - 1);
 	i = 1;
 	while (argv[i])
