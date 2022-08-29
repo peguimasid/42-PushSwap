@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/08/29 15:10:21 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/08/29 15:11:05 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,22 @@ int	is_empty(t_stack *stack)
 	return (stack->index == -1);
 }
 
-// Function to add an item to stack.  It increases top by 1
 void	push(t_stack *stack, int item)
 {
 	stack->array[++stack->index] = item;
 	ft_printf("%d pushed to stack\n", item);
 }
 
-// Function to remove an item from stack.  It decreases top by 1
 int	pop(t_stack *stack)
 {
 	return (stack->array[stack->index--]);
 }
 
-// Function to return the top from stack without removing it
 int	peek(t_stack *stack)
 {
 	return (stack->array[stack->index]);
 }
 
-// Driver program to test above functions
 int	main(int argc, char **argv)
 {
 	t_stack	*stack;
