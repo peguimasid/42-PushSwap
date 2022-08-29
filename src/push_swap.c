@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/08/29 15:11:05 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/08/29 18:47:08 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,6 @@ void	push(t_stack *stack, int item)
 int	pop(t_stack *stack)
 {
 	return (stack->array[stack->index--]);
-}
-
-int	peek(t_stack *stack)
-{
-	return (stack->array[stack->index]);
 }
 
 int	main(int argc, char **argv)
