@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:10:54 by gmasid            #+#    #+#             */
-/*   Updated: 2022/08/31 18:37:51 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/08/31 18:44:22 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,23 +64,23 @@ int	is_num(char *str)
 
 long	get_val(char *str)
 {
-	long	n;
+	long	result;
 	int		i;
-	int		s;
+	int		sign;
 
 	i = 0;
-	n = 0;
-	s = 1;
+	result = 0;
+	sign = 1;
 	if (str[i] == '-')
 	{
-		s = -1;
+		sign = -1;
 		i++;
 	}
 	while (str[i])
-		n = n * 10 + str[i++] - '0';
-	if (n > INT_MAX || n < INT_MIN)
+		result = result * 10 + str[i++] - '0';
+	if (result > INT_MAX || result < INT_MIN)
 		return (2147483648);
-	return (n * s);
+	return (result * sign);
 }
 
 int	includes(t_stack *stack, int value)
@@ -100,13 +100,16 @@ int	includes(t_stack *stack, int value)
 int	fill_stack(t_stack *stack, char **av)
 {
 	int i = 0;
+	long val;
 
 	while (av[i])
 	{
-		if (!is_num(av[i]) || get_val(av[i]) == 2147483648 || includes(stack,
-				get_val(av[i])))
+		if (!is_num(av[i]))
 			return (0);
-		push(stack, get_val(av[i]));
+		val = get_val(av[i]);
+		if (val == 2147483648 || includes(stack, val))
+			return (0);
+		push(stack, val);
 		i++;
 	}
 
