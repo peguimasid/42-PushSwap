@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/08/31 18:21:59 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/08/31 18:34:53 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack;
 
-	if (argc < 2 || !argv[0])
+	if (argc < 2)
 		return (throw_error("Plase provide at least one number"));
 	stack = create_stack(argc - 1);
+	if (!fill_stack(stack, argv + 1))
+		return (throw_error("You provide a invalid or duplicate number"));
 	print_list(stack);
 	return (0);
 }
