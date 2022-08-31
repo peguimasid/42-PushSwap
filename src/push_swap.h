@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/08/29 14:58:19 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/08/31 14:49:50 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 typedef struct s_stack
 {
-	int			index;
 	unsigned	size;
+	int			end_index;
 	int			*array;
 }				t_stack;
 

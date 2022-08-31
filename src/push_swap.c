@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/08/29 18:52:39 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/08/31 18:06:47 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,41 @@ t_stack	*create_stack(unsigned int size)
 
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	stack->size = size;
-	stack->index = -1;
+	stack->end_index = -1;
 	stack->array = (int *)malloc(size * sizeof(int));
 	return (stack);
 }
 
 int	is_empty(t_stack *stack)
 {
-	return (stack->index == -1);
+	return (stack->end_index == -1);
 }
 
 void	push(t_stack *stack, int item)
 {
-	stack->array[++stack->index] = item;
-	ft_printf("%d pushed to stack\n", item);
+	stack->array[++stack->end_index] = item;
 }
 
 int	pop(t_stack *stack)
 {
-	return (stack->array[stack->index--]);
+	int	removed_value;
+
+	removed_value = stack->array[stack->end_index];
+	stack->array[stack->end_index--] = 0;
+	return (removed_value);
+}
+
+void	print_list(t_stack *stack)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < stack->size)
+	{
+		ft_printf("%d -> ", stack->array[i]);
+		i++;
+	}
+	ft_printf("endIndx = %d", stack->end_index);
 }
 
 int	main(int argc, char **argv)
@@ -54,9 +70,6 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (throw_error("Plase provide at least one number"));
-	// TODO: Validate if all argv[] are numbers
-	// TODO: Improve create stack code architecture
-	// TODO: Create stack operations (SA, SB, SS...)
 	stack = create_stack(argc - 1);
 	i = 1;
 	while (argv[i])
@@ -67,6 +80,8 @@ int	main(int argc, char **argv)
 	ft_printf("\n");
 	ft_printf("%d popped from stack\n", pop(stack));
 	ft_printf("%d popped from stack\n", pop(stack));
-	ft_printf("%d popped from stack\n", pop(stack));
+	print_list(stack);
+	// ft_printf("%d popped from stack\n", pop(stack));
+	// ft_printf("%d popped from stack\n", pop(stack));
 	return (0);
 }
