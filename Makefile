@@ -1,7 +1,8 @@
 NAME=push_swap
 CC=cc
 
-SRCS	= src/push_swap.c
+SRCS	= src/push_swap.c	\
+				src/parse.c
 
 LIBFTPRINTF = lib/ft_printf/libftprintf.a
 
