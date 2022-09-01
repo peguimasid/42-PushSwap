@@ -3,7 +3,8 @@ CC=cc
 
 SRCS	= src/push_swap.c	\
 				src/parse.c	\
-				src/stack_utils.c
+				src/stack_utils.c	\
+				src/stack_operations.c	\
 
 LIBFTPRINTF = lib/ft_printf/libftprintf.a
 
