@@ -1,46 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_operations.c                                 :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:34:14 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 11:44:59 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 16:56:25 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	operation_sa(t_stack *stack_a)
+int	swap(t_stack *stack)
 {
 	int	tmp;
 
-	if (stack_a->end_index < 1)
+	if (stack->end_index < 1)
 		return (0);
-	tmp = stack_a->array[stack_a->end_index];
-	stack_a->array[stack_a->end_index] = stack_a->array[stack_a->end_index - 1];
-	stack_a->array[stack_a->end_index - 1] = tmp;
+	tmp = stack->array[stack->end_index];
+	stack->array[stack->end_index] = stack->array[stack->end_index - 1];
+	stack->array[stack->end_index - 1] = tmp;
 	return (1);
 }
 
-int	operation_sb(t_stack *stack_b)
+int	rotate(t_stack *stack)
 {
+	int	i;
 	int	tmp;
 
-	if (stack_b->end_index < 1)
+	if (is_empty(stack))
 		return (0);
-	tmp = stack_b->array[stack_b->end_index];
-	stack_b->array[stack_b->end_index] = stack_b->array[stack_b->end_index - 1];
-	stack_b->array[stack_b->end_index - 1] = tmp;
+	tmp = stack->array[0];
+	i = 1;
+	while (i <= stack->end_index)
+	{
+		stack->array[i - 1] = stack->array[i];
+		i++;
+	}
+	stack->array[i - 1] = tmp;
 	return (1);
 }
 
-int	do_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
+int	execute_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
 {
 	if (ft_strncmp(operation, "SA", 2) == 0)
-		return (operation_sa(stack_a));
+		return (swap(stack_a));
 	if (ft_strncmp(operation, "SB", 2) == 0)
-		return (operation_sb(stack_b));
+		return (swap(stack_b));
+	if (ft_strncmp(operation, "SS", 2) == 0)
+		return (swap(stack_a) && swap(stack_b));
+	if (ft_strncmp(operation, "RA", 2) == 0)
+		return (rotate(stack_a));
 	return (0);
 }
