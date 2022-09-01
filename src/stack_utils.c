@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:23:52 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 18:25:47 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 20:14:58 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	is_empty(t_stack *stack)
 	return (stack->end_index == -1);
 }
 
+// Insert element in top of stack
 void	push(t_stack *stack, int value)
 {
 	if (stack->end_index + 1 >= stack->size)
@@ -35,6 +36,7 @@ void	push(t_stack *stack, int value)
 	stack->array[++stack->end_index] = value;
 }
 
+// Remove element from top of stack and return it
 int	pop(t_stack *stack)
 {
 	int	removed_node;
@@ -44,6 +46,7 @@ int	pop(t_stack *stack)
 	return (removed_node);
 }
 
+// Insert element in beginning of stack
 void	unshift(t_stack *stack, int value)
 {
 	int	i;
@@ -59,6 +62,7 @@ void	unshift(t_stack *stack, int value)
 	stack->array[0] = value;
 }
 
+// Remove element from beginning of stack and return it
 int	shift(t_stack *stack)
 {
 	int	i;
@@ -75,6 +79,7 @@ int	shift(t_stack *stack)
 	return (remove_node);
 }
 
+// Check if stack contains determinate value
 int	includes(t_stack *stack, int value)
 {
 	int	i;
