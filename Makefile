@@ -5,7 +5,8 @@ SRCS	= src/push_swap.c	\
 				src/parse.c	\
 				src/common.c	\
 				src/operations.c	\
-				src/stack_utils.c	\
+				src/stack_utils_1.c	\
+				src/stack_utils_2.c	\
 
 LIBFTPRINTF = lib/ft_printf/libftprintf.a
 
