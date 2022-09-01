@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:23:52 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 11:31:20 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 16:59:39 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,22 @@ int	pop(t_stack *stack)
 	removed_node = stack->array[stack->end_index];
 	stack->array[stack->end_index--] = 0;
 	return (removed_node);
+}
+
+int	shift(t_stack *stack)
+{
+	int	i;
+	int	remove_node;
+
+	remove_node = stack->array[0];
+	i = 1;
+	while (i <= stack->end_index)
+	{
+		stack->array[i - 1] = stack->array[i];
+		i++;
+	}
+	stack->end_index--;
+	return (remove_node);
 }
 
 int	includes(t_stack *stack, int value)

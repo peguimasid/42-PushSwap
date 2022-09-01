@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:34:14 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 16:56:25 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 17:00:19 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,9 @@ int	swap(t_stack *stack)
 
 int	rotate(t_stack *stack)
 {
-	int	i;
-	int	tmp;
-
 	if (is_empty(stack))
 		return (0);
-	tmp = stack->array[0];
-	i = 1;
-	while (i <= stack->end_index)
-	{
-		stack->array[i - 1] = stack->array[i];
-		i++;
-	}
-	stack->array[i - 1] = tmp;
-	return (1);
+	shift(stack);
 }
 
 int	execute_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
