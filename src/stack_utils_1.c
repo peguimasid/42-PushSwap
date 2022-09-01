@@ -6,11 +6,11 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:23:52 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 20:26:33 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 20:29:21 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_stack	*create_stack(unsigned int size)
 {

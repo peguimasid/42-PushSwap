@@ -6,11 +6,11 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:04:16 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 18:18:52 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 20:29:04 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	throw_error(char *error)
 {

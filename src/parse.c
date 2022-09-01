@@ -6,11 +6,11 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:10:54 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 11:31:24 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 20:29:13 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	is_num(char *str)
 {

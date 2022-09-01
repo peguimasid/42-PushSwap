@@ -6,11 +6,11 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 20:25:09 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 20:26:39 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 20:29:25 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 // Insert element in top of stack
 void	push(t_stack *stack, int value)
