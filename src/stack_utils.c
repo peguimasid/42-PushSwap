@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:23:52 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 18:24:26 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 18:25:47 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	unshift(t_stack *stack, int value)
 {
 	int	i;
 
+	if (stack->end_index + 1 >= stack->size)
+		return ;
 	i = ++stack->end_index;
 	while (i >= 0)
 	{
