@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:23:52 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 11:28:25 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 11:31:20 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	pop(t_stack *stack)
 
 int	includes(t_stack *stack, int value)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= stack->end_index)
