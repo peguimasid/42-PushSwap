@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 16:59:55 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 17:30:40 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,17 @@ typedef struct s_stack
 
 t_stack	*create_stack(unsigned int size);
 
-int		pop(t_stack *stack);
-int		shift(t_stack *stack);
-int		is_empty(t_stack *stack);
 int		throw_error(char *error);
-int		includes(t_stack *stack, int value);
 int		fill_stack(t_stack *stack, char **av);
 int		execute_operation(char *operation, t_stack *stack_a, t_stack *stack_b);
 
 void	push(t_stack *stack, int item);
+void	unshift(t_stack *stack, int value);
+int		pop(t_stack *stack);
+int		shift(t_stack *stack);
+int		is_empty(t_stack *stack);
+int		includes(t_stack *stack, int value);
+
 void	print_list(t_stack *stack);
 
 #endif

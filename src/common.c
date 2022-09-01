@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:04:16 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 16:04:52 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 18:18:52 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,14 @@ void	print_list(t_stack *stack)
 	int	i;
 
 	i = 0;
+	ft_printf("[");
 	while (i < stack->size)
 	{
-		ft_printf("%d -> ", stack->array[i]);
+		ft_printf("%d", stack->array[i]);
+		if (i != stack->size - 1)
+			ft_printf(", ");
 		i++;
 	}
-	ft_printf("endIndx = %d", stack->end_index);
+	ft_printf("]");
+	ft_printf("\nend_index = %d", stack->end_index);
 }

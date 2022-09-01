@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:23:52 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 16:59:39 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/01 18:24:26 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int	is_empty(t_stack *stack)
 	return (stack->end_index == -1);
 }
 
-void	push(t_stack *stack, int item)
+void	push(t_stack *stack, int value)
 {
 	if (stack->end_index + 1 >= stack->size)
 		return ;
-	stack->array[++stack->end_index] = item;
+	stack->array[++stack->end_index] = value;
 }
 
 int	pop(t_stack *stack)
@@ -42,6 +42,19 @@ int	pop(t_stack *stack)
 	removed_node = stack->array[stack->end_index];
 	stack->array[stack->end_index--] = 0;
 	return (removed_node);
+}
+
+void	unshift(t_stack *stack, int value)
+{
+	int	i;
+
+	i = ++stack->end_index;
+	while (i >= 0)
+	{
+		stack->array[i] = stack->array[i - 1];
+		i--;
+	}
+	stack->array[0] = value;
 }
 
 int	shift(t_stack *stack)
@@ -56,7 +69,7 @@ int	shift(t_stack *stack)
 		stack->array[i - 1] = stack->array[i];
 		i++;
 	}
-	stack->end_index--;
+	stack->array[stack->end_index--] = 0;
 	return (remove_node);
 }
 
