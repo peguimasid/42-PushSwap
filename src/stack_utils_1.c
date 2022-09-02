@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:23:52 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 12:33:35 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 12:35:10 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_empty(t_stack *stack)
 
 int	is_full(t_stack *stack)
 {
-	return (stack->end_index + 1 >= stack->size);
+	return (stack->end_index == stack->size - 1);
 }
 
 // Check if stack contains determinate value
