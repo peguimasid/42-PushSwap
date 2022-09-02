@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:34:14 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 12:45:04 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 12:53:40 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ int	reverse_rotate(t_stack *stack)
 	return (1);
 }
 
+int	push_from(t_stack *src_stack, t_stack *dest_stack)
+{
+	if (is_empty(src_stack))
+		return (0);
+	push(dest_stack, pop(src_stack));
+	return (1);
+}
+
 int	execute_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
 {
 	if (ft_strncmp(operation, "SA", 2) == 0)
@@ -60,5 +68,9 @@ int	execute_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
 		return (rotate(stack_b));
 	if (ft_strncmp(operation, "RR", 2) == 0)
 		return (rotate(stack_a) && rotate(stack_b));
+	if (ft_strncmp(operation, "PA", 2) == 0)
+		return (push_from(stack_b, stack_a));
+	if (ft_strncmp(operation, "PB", 2) == 0)
+		return (push_from(stack_a, stack_b));
 	return (0);
 }
