@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 20:25:09 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 19:23:41 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 20:53:55 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,10 @@ int	shift(t_stack *stack)
 	}
 	stack->array[stack->end_index--] = 0;
 	return (remove_node);
+}
+
+// Return element at Nth position of stack, counting from top to bottom
+int	peek(t_stack *stack, int i)
+{
+	return (stack->array[stack->end_index - i]);
 }

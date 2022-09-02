@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:23:52 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 19:23:46 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 20:53:44 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@ int	is_empty(t_stack *stack)
 int	is_full(t_stack *stack)
 {
 	return (stack->end_index == stack->size - 1);
-}
-
-// Return element at Nth position of stack, counting from top to bottom
-int	peek(t_stack *stack, int i)
-{
-	return (stack->array[stack->end_index - i]);
 }
 
 // Check if stack contains determinate value
