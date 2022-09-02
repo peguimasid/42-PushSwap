@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 14:39:45 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 20:51:54 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 }		t_stack;
 
 t_stack	*create_stack(unsigned int size);
+void	free_stack(t_stack *stack);
 
 int		throw_error(char *error);
 int		fill_stack(t_stack *stack, int ac, char **av);
