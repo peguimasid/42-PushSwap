@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:10:54 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 19:51:21 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 20:06:00 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,5 +162,7 @@ int	fill_stack(t_stack *stack, int ac, char **av)
 		}
 		i++;
 	}
+	free(array);
+	free(array_copy);
 	return (1);
 }
