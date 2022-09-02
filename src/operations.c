@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:34:14 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 20:29:10 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 12:45:04 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@ int	rotate(t_stack *stack)
 	return (1);
 }
 
+int	reverse_rotate(t_stack *stack)
+{
+	if (is_empty(stack))
+		return (0);
+	push(stack, shift(stack));
+	return (1);
+}
+
 int	execute_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
 {
 	if (ft_strncmp(operation, "SA", 2) == 0)
@@ -40,6 +48,12 @@ int	execute_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
 		return (swap(stack_b));
 	if (ft_strncmp(operation, "SS", 2) == 0)
 		return (swap(stack_a) && swap(stack_b));
+	if (ft_strncmp(operation, "RRA", 3) == 0)
+		return (reverse_rotate(stack_a));
+	if (ft_strncmp(operation, "RRB", 3) == 0)
+		return (reverse_rotate(stack_b));
+	if (ft_strncmp(operation, "RRR", 3) == 0)
+		return (reverse_rotate(stack_a) && reverse_rotate(stack_b));
 	if (ft_strncmp(operation, "RA", 2) == 0)
 		return (rotate(stack_a));
 	if (ft_strncmp(operation, "RB", 2) == 0)
