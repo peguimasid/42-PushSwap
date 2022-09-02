@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:10:54 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 20:29:13 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 13:10:22 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ long	get_val(char *str)
 	return (result * sign);
 }
 
-int	fill_stack(t_stack *stack, char **av)
+int	fill_stack(t_stack *stack, int ac, char **av)
 {
 	int		i;
 	long	val;
 
-	i = 0;
-	while (av[i])
+	i = ac - 1;
+	while (i >= 0)
 	{
 		if (!is_num(av[i]))
 			return (0);
@@ -65,7 +65,7 @@ int	fill_stack(t_stack *stack, char **av)
 		if (val == 2147483648 || includes(stack, val))
 			return (0);
 		push(stack, val);
-		i++;
+		i--;
 	}
 	return (1);
 }

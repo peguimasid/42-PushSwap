@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 12:58:05 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 13:09:10 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		return (throw_error("Plase provide at least one number"));
 	stack_a = create_stack(argc - 1);
 	stack_b = create_stack(argc - 1);
-	if (!fill_stack(stack_a, argv + 1))
+	if (!fill_stack(stack_a, argc - 1, argv + 1))
 		return (throw_error("You provide a invalid or duplicate number"));
 	ft_printf("----------- BEFORE ----------\n");
 	ft_printf("STACK A\n");
@@ -30,8 +30,8 @@ int	main(int argc, char **argv)
 	ft_printf("STACK B\n");
 	print_list(stack_b);
 	// ---
-	execute_operation("PB", stack_a, stack_b);
-	execute_operation("PB", stack_a, stack_b);
+	// execute_operation("PB", stack_a, stack_b);
+	// execute_operation("PB", stack_a, stack_b);
 	// ---
 	ft_printf("\n\n\n----------- AFTER ------------\n");
 	ft_printf("STACK A\n");
