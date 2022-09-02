@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils_2.c                                    :+:      :+:    :+:   */
+/*   stack_methods.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 20:25:09 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 12:32:12 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 19:23:41 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 // Insert element in top of stack
 void	push(t_stack *stack, int value)
