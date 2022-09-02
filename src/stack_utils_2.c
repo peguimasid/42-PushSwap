@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 20:25:09 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 20:29:25 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 12:32:12 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Insert element in top of stack
 void	push(t_stack *stack, int value)
 {
-	if (stack->end_index + 1 >= stack->size)
+	if (is_full(stack))
 		return ;
 	stack->array[++stack->end_index] = value;
 }
@@ -35,7 +35,7 @@ void	unshift(t_stack *stack, int value)
 {
 	int	i;
 
-	if (stack->end_index + 1 >= stack->size)
+	if (is_full(stack))
 		return ;
 	i = ++stack->end_index;
 	while (i >= 0)

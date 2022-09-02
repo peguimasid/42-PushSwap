@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 17:30:40 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 12:31:52 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	push(t_stack *stack, int item);
 void	unshift(t_stack *stack, int value);
 int		pop(t_stack *stack);
 int		shift(t_stack *stack);
+int		is_full(t_stack *stack);
 int		is_empty(t_stack *stack);
 int		includes(t_stack *stack, int value);
 
