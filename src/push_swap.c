@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 13:09:10 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/02 14:16:00 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int	main(int argc, char **argv)
 	ft_printf("STACK B\n");
 	print_list(stack_b);
 	// ---
-	// execute_operation("PB", stack_a, stack_b);
-	// execute_operation("PB", stack_a, stack_b);
+	execute_operation("PB", stack_a, stack_b);
+	execute_operation("PB", stack_a, stack_b);
+	execute_operation("PB", stack_a, stack_b);
+	execute_operation("PB", stack_a, stack_b);
 	// ---
 	ft_printf("\n\n\n----------- AFTER ------------\n");
 	ft_printf("STACK A\n");
