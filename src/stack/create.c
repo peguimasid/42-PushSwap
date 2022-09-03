@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_create.c                                     :+:      :+:    :+:   */
+/*   create.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 19:20:40 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 20:52:18 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/03 19:46:05 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ t_stack	*create_stack(unsigned int size)
 	return (stack);
 }
 
-void	free_stack(t_stack *stack)
+void	free_stacks(t_stack *stack_a, t_stack *stack_b)
 {
-	free(stack->array);
-	free(stack);
+	free(stack_a->array);
+	free(stack_b->array);
+	free(stack_a);
+	free(stack_b);
 }
