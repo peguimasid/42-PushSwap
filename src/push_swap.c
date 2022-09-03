@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/03 16:43:55 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/03 16:46:22 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int	main(int argc, char **argv)
 	print_list(stack_b);
 	// ---
 	dispatch_operation("sa", stack_a, stack_b);
+	dispatch_operation("sa", stack_a, stack_b);
+	dispatch_operation("sa", stack_a, stack_b);
+	dispatch_operation("ra", stack_a, stack_b);
 	// ---
 	ft_printf("\n\n\n----------- AFTER ------------\n");
 	ft_printf("STACK A\n");

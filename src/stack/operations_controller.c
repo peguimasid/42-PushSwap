@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 16:28:22 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/03 16:43:49 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/03 16:45:13 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	dispatch_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
 {
 	if (execute_operation(operation, stack_a, stack_b))
 	{
-		ft_printf("%s", operation);
+		ft_printf("%s\n", operation);
 		return (1);
 	}
 	return (0);
