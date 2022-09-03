@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:10:54 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 20:06:00 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/03 15:59:06 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,29 +110,31 @@ int	*copy_array(int *array, int size)
 	return (result);
 }
 
-int	sort_array(int *array, int size)
+int	*sort(int *array, int size)
 {
 	int	i;
 	int	j;
 	int	temp;
+	int	*array_copy;
 
+	array_copy = copy_array(array, size);
 	i = 0;
 	while (i < size)
 	{
 		j = 0;
 		while (j < size - 1)
 		{
-			if (array[j] > array[j + 1])
+			if (array_copy[j] > array_copy[j + 1])
 			{
-				temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
+				temp = array_copy[j];
+				array_copy[j] = array_copy[j + 1];
+				array_copy[j + 1] = temp;
 			}
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (array_copy);
 }
 
 int	fill_stack(t_stack *stack, int ac, char **av)
@@ -140,29 +142,25 @@ int	fill_stack(t_stack *stack, int ac, char **av)
 	int	i;
 	int	j;
 	int	*array;
-	int	*array_copy;
+	int	*array_sorted;
 
 	array = malloc(sizeof(int) * ac);
 	if (!fill_array(array, ac, av))
 		return (0);
-	array_copy = copy_array(array, ac);
-	sort_array(array_copy, ac);
+	array_sorted = sort(array, ac);
 	i = 0;
 	while (i < ac)
 	{
 		j = 0;
 		while (j < ac)
 		{
-			if (array[i] == array_copy[j])
-			{
-				stack->array[i] = j;
-				break ;
-			}
+			if (array[i] == array_sorted[j])
+				push(stack, j);
 			j++;
 		}
 		i++;
 	}
 	free(array);
-	free(array_copy);
+	free(array_sorted);
 	return (1);
 }
