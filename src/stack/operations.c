@@ -6,12 +6,13 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:34:14 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/03 16:28:20 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/03 16:52:03 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+// Execute "sa", "sb" and "ss"
 int	swap(t_stack *stack)
 {
 	int	tmp;
@@ -24,6 +25,7 @@ int	swap(t_stack *stack)
 	return (1);
 }
 
+// Execute "ra", "rb" and "rr"
 int	rotate(t_stack *stack)
 {
 	if (is_empty(stack))
@@ -32,6 +34,7 @@ int	rotate(t_stack *stack)
 	return (1);
 }
 
+// Execute "rra", "rrb" and "rrr"
 int	reverse_rotate(t_stack *stack)
 {
 	if (is_empty(stack))
@@ -40,6 +43,7 @@ int	reverse_rotate(t_stack *stack)
 	return (1);
 }
 
+// Execute "pa" and "pb"
 int	push_from(t_stack *src_stack, t_stack *dest_stack)
 {
 	if (is_empty(src_stack) || is_full(dest_stack))
