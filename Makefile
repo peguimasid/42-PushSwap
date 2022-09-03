@@ -3,6 +3,7 @@ CC=cc
 
 SRCS	= src/push_swap.c	\
 				src/parse.c	\
+				src/utils.c	\
 				src/common.c	\
 				src/stack/stack_create.c	\
 				src/stack/stack_methods.c	\

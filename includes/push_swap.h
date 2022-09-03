@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/02 20:51:54 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/03 16:16:42 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ int		peek(t_stack *stack, int i);
 int		includes(t_stack *stack, int value);
 
 void	print_list(t_stack *stack);
+
+int		is_num(char *str);
+long	get_val(char *str);
 
 #endif
