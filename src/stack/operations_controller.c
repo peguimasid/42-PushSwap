@@ -6,44 +6,71 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 16:28:22 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/03 16:45:13 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/04 16:01:07 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	execute_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
+char	*get_operation_str(int operation)
 {
-	if (ft_strncmp(operation, "sa", 2) == 0)
+	if (operation == SA)
+		return ("sa");
+	if (operation == SB)
+		return ("sb");
+	if (operation == SS)
+		return ("ss");
+	if (operation == RRA)
+		return ("rra");
+	if (operation == RRB)
+		return ("rrb");
+	if (operation == RRR)
+		return ("rrr");
+	if (operation == RA)
+		return ("ra");
+	if (operation == RB)
+		return ("rb");
+	if (operation == RR)
+		return ("rr");
+	if (operation == PA)
+		return ("pa");
+	if (operation == PB)
+		return ("pb");
+	return ("");
+}
+
+int	execute_operation(int operation, t_stack *stack_a, t_stack *stack_b)
+{
+	if (operation == SA)
 		return (swap(stack_a));
-	if (ft_strncmp(operation, "sb", 2) == 0)
+	if (operation == SB)
 		return (swap(stack_b));
-	if (ft_strncmp(operation, "ss", 2) == 0)
+	if (operation == SS)
 		return (swap(stack_a) && swap(stack_b));
-	if (ft_strncmp(operation, "rra", 3) == 0)
+	if (operation == RRA)
 		return (reverse_rotate(stack_a));
-	if (ft_strncmp(operation, "rrb", 3) == 0)
+	if (operation == RRB)
 		return (reverse_rotate(stack_b));
-	if (ft_strncmp(operation, "rrr", 3) == 0)
+	if (operation == RRR)
 		return (reverse_rotate(stack_a) && reverse_rotate(stack_b));
-	if (ft_strncmp(operation, "ra", 2) == 0)
+	if (operation == RA)
 		return (rotate(stack_a));
-	if (ft_strncmp(operation, "rb", 2) == 0)
+	if (operation == RB)
 		return (rotate(stack_b));
-	if (ft_strncmp(operation, "rr", 2) == 0)
+	if (operation == RR)
 		return (rotate(stack_a) && rotate(stack_b));
-	if (ft_strncmp(operation, "pa", 2) == 0)
+	if (operation == PA)
 		return (push_from(stack_b, stack_a));
-	if (ft_strncmp(operation, "pb", 2) == 0)
+	if (operation == PB)
 		return (push_from(stack_a, stack_b));
 	return (0);
 }
 
-int	dispatch_operation(char *operation, t_stack *stack_a, t_stack *stack_b)
+int	dispatch_operation(int operation, t_stack *stack_a, t_stack *stack_b)
 {
 	if (execute_operation(operation, stack_a, stack_b))
 	{
-		ft_printf("%s\n", operation);
+		ft_printf("%s\n", get_operation_str(operation));
 		return (1);
 	}
 	return (0);
