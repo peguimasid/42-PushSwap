@@ -2,9 +2,9 @@ NAME=push_swap
 CC=cc
 
 SRCS	= src/push_swap.c	\
-				src/parse.c	\
-				src/utils.c	\
 				src/common.c	\
+				src/parse/main.c	\
+				src/parse/utils.c	\
 				src/sort/main.c	\
 				src/stack/create.c	\
 				src/stack/methods.c	\
