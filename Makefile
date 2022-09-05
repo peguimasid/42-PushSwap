@@ -5,6 +5,7 @@ SRCS	= src/push_swap.c	\
 				src/parse.c	\
 				src/utils.c	\
 				src/common.c	\
+				src/sort/main.c	\
 				src/stack/create.c	\
 				src/stack/methods.c	\
 				src/stack/operations_controller.c	\
