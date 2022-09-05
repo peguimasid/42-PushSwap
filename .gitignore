@@ -1,11 +1,13 @@
 */**/.a
 */**/.o
 */**/.out
+*/**/*.log
 
 .vscode
 push_swap
 *.a
 *.o
 *.out
+*.log
 
 .DS_Store
