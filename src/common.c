@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:04:16 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/01 20:29:04 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/05 12:47:06 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ void	print_list(t_stack *stack)
 		i++;
 	}
 	ft_printf("]");
-	ft_printf("\nend_index = %d", stack->end_index);
 }
