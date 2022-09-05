@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:10:54 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/05 13:43:07 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/05 18:48:33 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int	fill_stack(t_stack *stack, int ac, char **av)
 		while (j < ac)
 		{
 			if (array[i] == array_sorted[j])
-				push(stack, j);
+				unshift(stack, j);
 			j++;
 		}
 		i++;

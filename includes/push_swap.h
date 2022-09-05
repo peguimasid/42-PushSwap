@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/05 13:04:06 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/05 18:23:11 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		fill_stack(t_stack *stack, int ac, char **av);
 int		dispatch_operation(int operation, t_stack *stack_a, t_stack *stack_b);
 
 int		is_sorted(t_stack *stack);
+void	solve(t_stack *stack_a, t_stack *stack_b);
 
 int		swap(t_stack *stack);
 int		rotate(t_stack *stack);
