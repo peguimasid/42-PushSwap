@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:00:34 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/05 19:31:25 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/05 19:42:59 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	sort_big_stack(t_stack *stack_a, t_stack *stack_b)
 
 void	solve(t_stack *stack_a, t_stack *stack_b)
 {
-	// if (is_sorted(stack_a))
-	// 	return ;
+	if (is_sorted(stack_a))
+		return ;
 	return (sort_big_stack(stack_a, stack_b));
 }
