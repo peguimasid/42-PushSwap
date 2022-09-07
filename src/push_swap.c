@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 14:04:20 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/06 20:18:55 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/07 15:10:33 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	if (argc < 2)
-		return (throw_error("Plase provide at least one number"));
+	if (argc == 1)
+		return (0);
 	stack_a = create_stack(argc - 1);
 	stack_b = create_stack(argc - 1);
 	if (!fill_stack(stack_a, argc - 1, argv + 1))
