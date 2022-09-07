@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/05 18:23:11 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/07 15:13:29 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ enum	e_operations
 t_stack	*create_stack(unsigned int size);
 void	free_stacks(t_stack *stack_a, t_stack *stack_b);
 
-int		throw_error(char *error);
+int		throw_error(void);
 int		fill_stack(t_stack *stack, int ac, char **av);
 int		dispatch_operation(int operation, t_stack *stack_a, t_stack *stack_b);
 
