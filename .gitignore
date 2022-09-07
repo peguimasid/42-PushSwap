@@ -5,11 +5,14 @@
 
 .vscode
 push_swap
-push_swap_tester/
-push_swap_tester2/
 *.a
 *.o
 *.out
 *.log
 
 .DS_Store
+
+# Added
+test.sh
+push_swap_tester/
+push_swap_tester2/
