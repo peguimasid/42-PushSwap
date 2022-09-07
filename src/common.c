@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:04:16 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/07 15:13:50 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/07 15:37:11 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	throw_error(void)
 {
-	ft_putstr_fd("\033[0;31m\n", STDERR_FILENO);
 	ft_putstr_fd("Error\n", STDERR_FILENO);
-	ft_putstr_fd("\033[0m", STDERR_FILENO);
 	return (1);
 }
 
