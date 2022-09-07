@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:10:54 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/03 16:15:54 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/07 15:32:21 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	contains_duplicates(int *array, int size)
 {
@@ -18,10 +18,10 @@ int	contains_duplicates(int *array, int size)
 	int	j;
 
 	i = 0;
-	while (i < size)
+	while (i <= size)
 	{
 		j = i + 1;
-		while (j < size)
+		while (j <= size)
 		{
 			if (array[i] == array[j])
 				return (1);
@@ -45,9 +45,11 @@ int	fill_array(int *array, int argc, char **argv)
 		if (!is_num(argv[i]))
 			return (0);
 		val = get_val(argv[i]);
-		if (val == 2147483648 || contains_duplicates(array, j))
+		if (val == 2147483648)
 			return (0);
 		array[j] = get_val(argv[i]);
+		if (contains_duplicates(array, j))
+			return (0);
 		j++;
 		i++;
 	}
@@ -116,7 +118,7 @@ int	fill_stack(t_stack *stack, int ac, char **av)
 		while (j < ac)
 		{
 			if (array[i] == array_sorted[j])
-				push(stack, j);
+				unshift(stack, j);
 			j++;
 		}
 		i++;

@@ -1,11 +1,21 @@
 */**/.a
 */**/.o
 */**/.out
+*/**/*.log
 
 .vscode
 push_swap
 *.a
 *.o
 *.out
+*.log
 
 .DS_Store
+
+# Added
+test.sh
+test2.sh
+test3.sh
+push_swap_tester/
+push_swap_tester2/
+checker
