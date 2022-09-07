@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 16:28:22 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/05 19:31:46 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/07 16:30:44 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,32 +66,11 @@ int	execute_operation(int operation, t_stack *stack_a, t_stack *stack_b)
 	return (0);
 }
 
-// TODO: Make function print just the operation
 int	dispatch_operation(int operation, t_stack *stack_a, t_stack *stack_b)
 {
-	// ft_printf(">> Before:\n");
-	// ft_printf("A: ");
-	// print_list(stack_a);
-	// ft_printf(" | end_index = %d", stack_a->end_index);
-	// ft_printf("\n");
-	// ft_printf("B: ");
-	// print_list(stack_b);
-	// ft_printf(" | end_index = %d", stack_b->end_index);
-	// ft_printf("\n\n");
 	if (execute_operation(operation, stack_a, stack_b))
 	{
 		ft_printf("%s\n", get_operation_str(operation));
-		// ft_printf("\n>> After:\n");
-		// ft_printf("A: ");
-		// print_list(stack_a);
-		// ft_printf("| end_index = %d", stack_a->end_index);
-		// ft_printf("\n");
-		// ft_printf("B: ");
-		// print_list(stack_b);
-		// ft_printf("| end_index = %d", stack_b->end_index);
-		// ft_printf("\n");
-		// ft_printf("\n");
-		// ft_printf("----------------------------------------\n");
 		return (1);
 	}
 	return (0);
