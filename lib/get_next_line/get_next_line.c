@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 15:13:17 by gmasid            #+#    #+#             */
-/*   Updated: 2022/05/30 12:16:26 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/08 15:07:21 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*read_file_until_find_next_line(int fd, char *work_str)
 	if (!buff)
 		return (NULL);
 	read_bytes_amount = 1;
-	while (!ft_strchr(work_str, '\n') && read_bytes_amount != 0)
+	while (!gnl_strchr(work_str, '\n') && read_bytes_amount != 0)
 	{
 		read_bytes_amount = read(fd, buff, BUFFER_SIZE);
 		if (read_bytes_amount == -1)
@@ -30,7 +30,7 @@ char	*read_file_until_find_next_line(int fd, char *work_str)
 			return (NULL);
 		}
 		buff[read_bytes_amount] = '\0';
-		work_str = ft_strjoin(work_str, buff);
+		work_str = gnl_strjoin(work_str, buff);
 	}
 	free(buff);
 	return (work_str);

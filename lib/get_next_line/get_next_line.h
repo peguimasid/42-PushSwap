@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:08:46 by gmasid            #+#    #+#             */
-/*   Updated: 2022/05/30 12:58:15 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/08 15:04:58 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ char	*read_file_until_find_next_line(int fd, char *aux_str);
 char	*get_part_before_next_line_from_work_string(char *aux_str);
 char	*get_part_after_next_line_from_work_string(char *aux_str);
 
-size_t	ft_strlen(char *s);
-char	*ft_strchr(char *s, int c);
-char	*ft_strjoin(char *aux_str, char *buffer);
+size_t	gnl_strlen(char *s);
+char	*gnl_strchr(char *s, int c);
+char	*gnl_strjoin(char *aux_str, char *buffer);
 
 #endif

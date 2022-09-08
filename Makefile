@@ -23,6 +23,8 @@ BONUS_SRCS	= src/checker.c	\
 							src/stack/operations_controller.c	\
 							src/stack/operations.c	\
 							src/stack/properties.c	\
+							lib/get_next_line/get_next_line.c	\
+							lib/get_next_line/get_next_line_utils.c	\
 
 LIBFTPRINTF = lib/ft_printf/libftprintf.a
 

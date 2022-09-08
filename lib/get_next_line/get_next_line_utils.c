@@ -6,13 +6,13 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 11:06:30 by gmasid            #+#    #+#             */
-/*   Updated: 2022/05/30 12:43:55 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/08 15:07:02 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *s)
+size_t	gnl_strlen(char *s)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*gnl_strchr(char *s, int c)
 {
 	size_t	i;
 
@@ -42,7 +42,7 @@ char	*ft_strchr(char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char *work_str, char *buff)
+char	*gnl_strjoin(char *work_str, char *buff)
 {
 	char	*result;
 	size_t	i;
@@ -55,7 +55,8 @@ char	*ft_strjoin(char *work_str, char *buff)
 	}
 	if (!work_str || !buff)
 		return (NULL);
-	result = malloc(sizeof(char) * (ft_strlen(work_str) + ft_strlen(buff) + 1));
+	result = malloc(sizeof(char) * (gnl_strlen(work_str) + gnl_strlen(buff)
+				+ 1));
 	if (!result)
 		return (NULL);
 	i = -1;
@@ -65,7 +66,7 @@ char	*ft_strjoin(char *work_str, char *buff)
 	j = 0;
 	while (buff[j])
 		result[i++] = buff[j++];
-	result[ft_strlen(work_str) + ft_strlen(buff)] = '\0';
+	result[gnl_strlen(work_str) + gnl_strlen(buff)] = '\0';
 	free(work_str);
 	return (result);
 }
@@ -112,7 +113,7 @@ char	*get_part_after_next_line_from_work_string(char *work_str)
 		free(work_str);
 		return (NULL);
 	}
-	result = malloc(sizeof(char) * (ft_strlen(work_str) - i + 1));
+	result = malloc(sizeof(char) * (gnl_strlen(work_str) - i + 1));
 	if (!result)
 		return (NULL);
 	j = 0;

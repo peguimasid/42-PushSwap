@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/08 14:55:55 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/08 15:05:52 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../lib/ft_printf/ft_printf.h"
+# include "../lib/get_next_line/get_next_line.h"
 # include <limits.h>
 # include <stdlib.h>
 
