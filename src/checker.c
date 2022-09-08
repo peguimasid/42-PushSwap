@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   common.c                                           :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 16:04:16 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/08 14:55:40 by gmasid           ###   ########.fr       */
+/*   Created: 2022/09/08 14:52:43 by gmasid            #+#    #+#             */
+/*   Updated: 2022/09/08 14:56:04 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	throw_error(void)
+int	main(int argc, char **argv)
 {
-	ft_putstr_fd("Error\n", STDERR_FILENO);
-	return (1);
-}
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-// TODO: Remove this function
-void	print_list(t_stack *stack)
-{
-	int i;
-
-	i = 0;
-	ft_printf("[");
-	while (i < stack->size)
-	{
-		ft_printf("%d", stack->array[i]);
-		if (i != stack->size - 1)
-			ft_printf(", ");
-		i++;
-	}
-	ft_printf("]");
+	if (argc == 1)
+		return (0);
+	stack_a = create_stack(argc - 1);
+	stack_b = create_stack(argc - 1);
+	if (!fill_stack(stack_a, argc - 1, argv + 1))
+		return (throw_error());
+	print_list(stack_a);
+	free_stacks(stack_a, stack_b);
+	return (0);
 }
