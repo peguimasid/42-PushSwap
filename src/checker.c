@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 14:52:43 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/08 15:45:37 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/08 15:47:31 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,9 @@ void	handle_input(t_stack *stack_a, t_stack *stack_b)
 		input = get_next_line(STDIN_FILENO);
 	}
 	if (is_empty(stack_b) && is_full(stack_a) && is_sorted(stack_a))
-	{
 		ft_printf("OK\n");
-		return ;
-	}
-	ft_printf("KO\n");
+	else
+		ft_printf("KO\n");
 }
 
 int	main(int argc, char **argv)
