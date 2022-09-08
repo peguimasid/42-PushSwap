@@ -16,6 +16,7 @@ push_swap
 test.sh
 test2.sh
 test3.sh
+test_checker.sh
 push_swap_tester/
 push_swap_tester2/
 checker
