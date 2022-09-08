@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:13:18 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/07 16:49:00 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/08 15:05:52 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../lib/ft_printf/ft_printf.h"
+# include "../lib/get_next_line/get_next_line.h"
 # include <limits.h>
 # include <stdlib.h>
 
@@ -64,5 +65,8 @@ int		peek(t_stack *stack, int i);
 
 int		is_num(char *str);
 long	get_val(char *str);
+
+// TODO: Remove this function
+void	print_list(t_stack *stack);
 
 #endif
