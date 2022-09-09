@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 14:52:43 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/08 16:20:24 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/09 11:29:46 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,28 @@ int	execute(char *operation, t_stack *stack_a, t_stack *stack_b)
 		return (push_from(stack_b, stack_a));
 	if (ft_strncmp(operation, "pb", 2) == 0)
 		return (push_from(stack_a, stack_b));
-	return (0);
+	return (2);
 }
 
-void	handle_input(t_stack *stack_a, t_stack *stack_b)
+int	loop_input(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*input;
+	int		status;
 
 	input = get_next_line(STDIN_FILENO);
 	while (input)
 	{
-		if (!execute(input, stack_a, stack_b))
-		{
-			throw_error();
-			return ;
-		}
+		status = execute(input, stack_a, stack_b);
 		free(input);
+		if (status == 2)
+			return (throw_error());
 		input = get_next_line(STDIN_FILENO);
 	}
 	if (is_empty(stack_b) && is_full(stack_a) && is_sorted(stack_a))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -72,8 +72,11 @@ int	main(int argc, char **argv)
 	if (!fill_stack(stack_a, argc - 1, argv + 1))
 		return (throw_error());
 	if (is_sorted(stack_a))
+	{
+		free_stacks(stack_a, stack_b);
 		return (0);
-	handle_input(stack_a, stack_b);
+	}
+	loop_input(stack_a, stack_b);
 	free_stacks(stack_a, stack_b);
 	return (0);
 }
