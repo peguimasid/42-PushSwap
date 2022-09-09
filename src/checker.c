@@ -6,7 +6,7 @@
 /*   By: gmasid <gmasid@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 14:52:43 by gmasid            #+#    #+#             */
-/*   Updated: 2022/09/09 11:32:40 by gmasid           ###   ########.fr       */
+/*   Updated: 2022/09/09 11:40:27 by gmasid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,6 @@ int	main(int argc, char **argv)
 	stack_b = create_stack(argc - 1);
 	if (!fill_stack(stack_a, argc - 1, argv + 1))
 		return (throw_error());
-	if (is_sorted(stack_a))
-	{
-		ft_printf("OK\n");
-		free_stacks(stack_a, stack_b);
-		return (0);
-	}
 	loop_input(stack_a, stack_b);
 	free_stacks(stack_a, stack_b);
 	return (0);
